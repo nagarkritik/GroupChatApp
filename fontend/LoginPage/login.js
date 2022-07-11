@@ -19,7 +19,7 @@ loginBtn.addEventListener('click', (e)=>{
             email:email.value, password: password.value
         }
         //console.log(userDetails)
-        axios.post('http://107.21.158.228:3000/login', userDetails)
+        axios.post('http://localhost:3000/login', userDetails)
         .then((res)=>{
             console.log(res.status)
 
@@ -27,7 +27,7 @@ loginBtn.addEventListener('click', (e)=>{
                 
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('userDetails', JSON.stringify({name:res.data.name, email: res.data.email}))
-                window.location.replace('../HomePage/home.html')
+                // window.location.replace('../HomePage/home.html')
             }
             
         }).catch(err=>{
