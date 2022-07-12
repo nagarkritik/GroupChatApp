@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const { json } = require('body-parser');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken')
-const sgMail = require('@sendgrid/mail')
+
 
 exports.postSignup = async (req, res, next)=>{
     let userDetails = req.body

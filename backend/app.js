@@ -13,7 +13,7 @@ const messageRoutes = require('./routes/message')
 const User = require('./models/user')
 const Group = require('./models/group')
 const Message = require('./models/message')
-
+const userGroup = require('./models/userGroup')
 
 const app = express()
 
@@ -25,8 +25,8 @@ app.use(userRoutes)
 app.use(gropuRoutes)
 app.use(messageRoutes)
 
-User.hasMany(Group)
-Group.belongsTo(User)
+User.belongsToMany(Group, { through: userGroup });
+Group.belongsToMany(User, { through: userGroup });
 
 User.hasMany(Message)
 Message.belongsTo(User)

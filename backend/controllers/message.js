@@ -2,65 +2,37 @@ const express=require('express');
 const Message=require('../models/message')
 const Group=require('../models/group')
 
-exports.addMessage=(req,res)=>{
+exports.addMessage = (req, res, next)=>{
 
-    const groupid=req.body.groupid
-    let msg=req.body.msg
-    console.log(req.user.name)
+    const groupId=req.body.groupid
+    //onsole.log(groupId)
+    const msg=req.body.msg
+    //console.log(req.user.name, msg)
+
     req.user.createMessage({
-        
         msg:msg,
-        username:req.user.name,
-        groupid:groupid
+        name:req.user.name,
+        gId:groupId
 
-    }).then(ress=>{
-       res.status(200).json("message added")
+    }).then(result=>{
+       res.status(200).json({result})
     })
     .catch(err=>{
         console.error(err)
     })
 }
 
-exports.getMessages=async(req,res)=>{
-    const lastId=req.query.lastmsg||0
-    let groupid=req.query.groupid
-    let lastIdN=+lastId
-    const userid=req.user.id
-   
-    groupid=+groupid
-    let trueuser=false
+exports.getMessages = async(req, res, next)=>{
+    
+    console.log(req.query.grpId)
+    const groupId = req.query.grpId
 
-    await Group.findByPk(groupid).then(async(groups)=>{
-        
-
-       const userids=groups.users.split(',')
-       console.log(userids.length)
-
-       for(let i=0;i<userids.length;i++){
-           if(userid==userids[i]){
-            trueuser=true
-           }
-            }
-               
-            })
-            .catch(err=>{
-                console.error(err)
-
-     })
-
-    if(trueuser){
-        Message.findAll({offset:lastIdN,where:{groupid:groupid}}).then(msgs=>{
-        // userdata=msgs.data
-        // console.log(userdata)
-        res.json(msgs)
+    Message.findAll({where:{gId: groupId}})
+    .then(messages=>{
+        //console.log(messages)
+        res.status(200).json({messages})
     })
-    .catch(err=>{
-        console.error(err)
-    })
+    .catch(err=>console.log(err))
 
-    }
-    else{
-        return res.json("user not allowed")
-    }
-
+    
 }

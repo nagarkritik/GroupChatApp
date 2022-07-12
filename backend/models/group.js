@@ -13,12 +13,6 @@ const Group=sequelize.define('group',{
         type:Sequelize.STRING,
         allowNull:false
 
-    },
-    users:{
-        type:Sequelize.STRING,
-        defaultValue: null
-    }
-
-    
+    } 
 })
 module.exports=Group

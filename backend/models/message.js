@@ -7,16 +7,15 @@ const Message=sequelize.define('message',{
         autoIncrement:true,
         primaryKey:true,
         allowNull:false
-
     },
     msg:{
         type:Sequelize.STRING,
 
     },
-    username:{
+    name:{
         type:Sequelize.STRING,
     },
-    groupid:{
+    gId:{
         type:Sequelize.INTEGER,
     }
 })

@@ -62,21 +62,25 @@ btn.addEventListener("click", () => {
     btn.classList.toggle("active");
 })
 const groupList = document.querySelector("#items") 
+
 document.addEventListener('DOMContentLoaded', (e)=>{
     e.preventDefault()
     axios.get('http://localhost:3000/getgroups',{headers:{"Authorization":token}})
     .then(res=>{
-        let data=res.data
-        console.log(data)
-        for(let i=0;i<data.length;i++){
+        
+        console.log(res.data)
+
+        let groups = res.data.groups
+        for(let i=0;i<groups.length;i++){
 
             let li = document.createElement("li")
             li.className = "list-group-item"
 
             li.innerHTML=` 
-            <a href="../home/home.html?groupid=${data[i].id}">
-            ${data[i].groupname}
-            </a>`
+            <a href="../chatPage/chat.html?grpid=${groups[i].id}">
+            ${groups[i].groupname}
+            </a>
+            <p id='created'>Created : ${groups[i].createdAt.slice(0,10)}</p>`
 
             groupList.appendChild(li)
         }

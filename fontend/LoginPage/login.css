@@ -6,7 +6,7 @@ body{
 	align-items: center;
 	min-height: 100vh;
 	font-family: 'Patua One', cursive;
-	background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+	background: linear-gradient(to bottom, #2C3639, #4c5b5c, #2C3639);
 }
 
 .main-container{
@@ -14,7 +14,7 @@ body{
     height: 500px;
     background: red;
     overflow: hidden;
-	background-color: rgb(39, 25, 91);
+	background-color: #2C3639;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
@@ -49,7 +49,7 @@ button{
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #573b8a;
+	background: #3F4E4F;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -61,13 +61,13 @@ button{
 }
 
 button:hover{
-    background-color: #885ed6;
+    background-color: #848d8d;
 }
 
 a{
     margin-left: 0.5rem;
     text-decoration: none;
-    color: rgb(157, 79, 235);
+    color: #9c9e9e;
 }
 
 a:hover{
