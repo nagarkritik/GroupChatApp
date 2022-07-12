@@ -2,20 +2,14 @@ const addMsgBtn=document.getElementById('addmsgbtn')
 const messageInput=document.getElementById('messageinput')
 var count=0
 document.addEventListener('DOMContentLoaded',async()=>{
-    getMessages()
-    addmembers()
-})
-
-function callingGetMessagesApi(){
-   setInterval(()=>{
+    
+    setInterval(()=>{
         getMessages()
         console.log('dshdf')
     
-    }
-       
-     , 1000)
-}
-callingGetMessagesApi()
+    },1000)
+    addmembers()
+})
 
 function getMessages(){
     let paramString = window.location.href;
