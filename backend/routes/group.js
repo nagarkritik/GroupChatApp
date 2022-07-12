@@ -4,8 +4,8 @@ const groupController=require('../controllers/group')
 const authenticateController = require('../authenticate/authenticate')
 
 
-router.post('/creategroup',authenticateController.isAuthenticate, groupController.createGroup)
-router.get('/getgroups',authenticateController.isAuthenticate, groupController.getGroups)
+router.post('/creategroup',authenticateController.authenticateToken, groupController.createGroup)
+router.get('/getgroups',authenticateController.authenticateToken, groupController.getGroups)
 
 
 
