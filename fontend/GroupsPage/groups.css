@@ -1,51 +1,107 @@
-* {
-  margin: 0px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+#main-header{
+    background-color: #2F8F9D;
 }
 
-.container {
-  width: 100%;
-  height: 100vh;
-  background-color: antiquewhite;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.submit-btn{
+    width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: #2F8F9D;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
 }
 
-.group_cont {
-  width: 40%;
-  height: 90vh;
-  background-color: white;
+input{
+	width: 60%;
+	height: 40px;
+	background: white;
+	margin: 20px auto;
+	padding: 10px;
+	outline: none;
+	border-radius: 5px;
+    border: 2px solid black;
+}
+#category{
+    width: 30%;
+	height: 37px;
+	background: white;
+	margin: 20px auto;
+
+	outline: none;
+	border-radius: 5px;
+    border: 2px solid black;
 }
 
-.group_cont h1 {
-  margin-left: 50%;
+#btn {
+    background-color: white;
+    border: none;
+    color: #2F8F9D;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
 }
 
-.group_cont ul li a {
-  text-decoration: none;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+#btn.active {
+    transform: translateX(-90px);
 }
 
-.group_cont ul li a img {
-  width: 50px;
-  border-radius: 100px;
+nav {
+    background-color: #3BACB6;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    padding: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
 }
-/*# sourceMappingURL=groups.css.map */
+
+nav.active {
+    transform: translateX(0);
+}
+
+nav ul {
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 1rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover{
+	text-decoration: none;
+	color: white;
+}
+
+nav button{
+	border: none;
+	background-color: #3BACB6;
+	color: white;
+	padding: 0;
+	cursor: pointer;
+}
+
+.empty::-webkit-input-placeholder {
+    color: red;
+	font-family: 'Patua One', cursive;
+ }
+
+

@@ -36,13 +36,9 @@ function getMessages(){
         for(i=count;i<dataa.length;i++){
             if(i%2==0){
                 messages_cont_ul.innerHTML=messages_cont_ul.innerHTML+ ` <li class="even">${dataa[i].username} : ${dataa[i]. msg} </li>`
-        
-        
-            }
-            else{
-        
-            messages_cont_ul.innerHTML=messages_cont_ul.innerHTML+ ` <li >${dataa[i].username} : ${dataa[i]. msg} </li>`
-            }
+            }else{
+                messages_cont_ul.innerHTML=messages_cont_ul.innerHTML+ ` <li >${dataa[i].username} : ${dataa[i]. msg} </li>`
+                }
             count=dataa.length;
         }
     }
