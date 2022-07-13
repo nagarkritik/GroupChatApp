@@ -1,5 +1,5 @@
 #main-header{
-    background-color: #2F8F9D;
+    background-color: #500119;
 }
 
 .submit-btn{
@@ -9,7 +9,7 @@
 	justify-content: center;
 	display: block;
 	color: #fff;
-	background: #2F8F9D;
+	background: #500119;
 	font-size: 1em;
 	font-weight: bold;
 	margin-top: 20px;
@@ -44,7 +44,7 @@ input{
 #btn {
     background-color: white;
     border: none;
-    color: #2F8F9D;
+    color: #500119;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -57,7 +57,7 @@ input{
 }
 
 nav {
-    background-color: #3BACB6;
+    background-color: #751834;
     position: fixed;
     top: 0;
     right: 0;
@@ -93,7 +93,7 @@ nav a:hover{
 
 nav button{
 	border: none;
-	background-color: #3BACB6;
+	background-color: #751834;
 	color: white;
 	padding: 0;
 	cursor: pointer;
@@ -114,7 +114,7 @@ nav button{
 
 #items a:hover{
 	text-decoration: none;
-	color: #2F8F9D;
+	color: #751834;
  }
 
 .title{
