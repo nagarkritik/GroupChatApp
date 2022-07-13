@@ -57,7 +57,7 @@ input{
 }
 
 nav {
-    background-color: #5e6e72;
+    background-color: #445052;
     position: fixed;
     top: 0;
     right: 0;
@@ -93,7 +93,7 @@ nav a:hover{
 
 nav button{
 	border: none;
-	background-color: #5e6e72;
+	background-color: #445052;
 	color: white;
 	padding: 0;
 	cursor: pointer;
@@ -106,6 +106,10 @@ nav button{
 .empty::-webkit-input-placeholder {
     color: red;
 	font-family: 'Patua One', cursive;
+ }
+
+ p{
+	margin-bottom: 0;
  }
 
 

@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 
 const sequelize = require('../util/database')
 
-const User = sequelize.define('userGroup', {
+const UserGroup = sequelize.define('userGroup', {
     id:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -16,4 +16,4 @@ const User = sequelize.define('userGroup', {
     }
 })
 
-module.exports = User
+module.exports = UserGroup

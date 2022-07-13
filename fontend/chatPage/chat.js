@@ -19,23 +19,25 @@ window.addEventListener('DOMContentLoaded', (e)=>{
             let adminDiv = document.querySelector(".admin")
 
             adminDiv.innerHTML = `
-            <li><a href="../adminControls/admin.html" id="leaderboard">Admin Controls</a></li>
+            <li><a href="../adminControls/admin.html?grpId=${grpId}" id="leaderboard">Admin Controls</a></li>
             `
         }
 
-        axios.get(`http://localhost:3000/getMessages?grpId=${grpId}`, { headers: {"Authorization" : token} })
-        .then(res=>{
-            console.log(res)
-
-            const messages = res.data.messages
-
-            for(let i=messages.length-1; i>=0; i--){
-                const date = messages[i].createdAt.slice(0,10)
-                const time = messages[i].createdAt.slice(11,16)
-
-                displayMessage(messages[i].name, messages[i].msg, date, time)
-            }
-        })
+        //setInterval(()=>{
+            axios.get(`http://localhost:3000/getMessages?grpId=${grpId}`, { headers: {"Authorization" : token} })
+            .then(res=>{
+                //console.log(res)
+    
+                const messages = res.data.messages
+    
+                for(let i=0; i<messages.length; i++){
+                    const date = messages[i].createdAt.slice(0,10)
+                    const time = messages[i].createdAt.slice(11,16)
+    
+                    displayMessage(messages[i].name, messages[i].msg, date, time)
+                }
+            })
+       // }, 1000)
      })
     
 })
@@ -85,7 +87,7 @@ function filterItems(e){
     //console.log(text)
 
     // Get List
-    var items = itemList.querySelectorAll("li")
+    var items = document.querySelectorAll("p")
     //console.log(item)
 
     Array.from(items).forEach(item => {
@@ -107,11 +109,11 @@ function displayMessage(name, message, date, time){
     let messageDiv = document.createElement('div')
 
     messageDiv.innerHTML = `
-        <p><b>${name}:</b> &nbsp;&nbsp; ${message} &nbsp;&nbsp;&nbsp;
-        ${date} &nbsp;&nbsp; ${time}
+        <p><b>${name}:</b> &nbsp;&nbsp; ${message} 
+        <p><small>${date} &nbsp;&nbsp; ${time}</small></p>
     `
         
-    messageContainer.append(messageDiv)
+    messageContainer.prepend(messageDiv)
 }
 
 
